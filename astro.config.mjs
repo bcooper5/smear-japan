@@ -8,6 +8,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
+  outDir: '/var/www/astro-japan/dist', // Outputs the build package to 'root /var/www/astro-japan/dist'
+
   integrations: [react(), mdx()],
 
   vite: {
