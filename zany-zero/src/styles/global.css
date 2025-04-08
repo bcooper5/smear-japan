@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+ul {
+    list-style-position: inside;
+}
+
+body {
+	background-color: #44403c;
+}

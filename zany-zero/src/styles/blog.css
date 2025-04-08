@@ -1,0 +1,41 @@
+#blog {
+    margin: 0.5rem;
+	border: solid black 0.25px;
+    padding: 0.5rem;
+    width: fit-content;
+}
+
+#blog h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: oklch(57.7% 0.245 27.325);
+    text-decoration: underline;
+	margin-bottom: 0.5rem;
+}
+
+#blog h3 {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+#blog blockquote {
+	background-color: white;
+    padding: 1rem;
+    border: double;
+    margin: 1rem 0;
+    width: fit-content;
+}
+
+#blog > img {
+    margin: 1.5rem 0;
+}
+
+#blog > ul {
+    margin-bottom: 1rem;
+	padding: 0 1rem;
+}
+
+#blog ul>li {
+    list-style-type: disc;
+    margin-bottom: 0.5rem;
+}
