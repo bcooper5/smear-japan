@@ -1,7 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import CalendarOnlineConsultation from '../components/CalendarOnlineConsultation.astro'
-import Gallery from '../components/Gallery.astro'
 import Blog from '../components/Blog.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -9,6 +8,8 @@ import Blog from '../components/Blog.astro'
 ---
 
 <Layout>
-	<CalendarOnlineConsultation />
-	<Blog />
+	<div class={`w-fit mx-auto`}>
+		<CalendarOnlineConsultation />
+		<Blog />
+	</div>
 </Layout>
