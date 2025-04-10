@@ -27,7 +27,7 @@
 }
 
 #blog > * > img {
-    margin: 1.5rem 0;
+    margin: 1.5rem auto;
 }
 
 #blog ul {
