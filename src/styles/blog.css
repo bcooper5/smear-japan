@@ -1,11 +1,12 @@
 #blog {
-    margin: 0.5rem;
+    margin: 0.5rem auto;
 	border: solid black 0.25px;
-    padding: 0.5rem;
+    padding: 1rem;
     width: fit-content;
+    background: #fefce8;
 }
 
-#blog h2 {
+#blog h1 {
     font-weight: bold;
     font-size: 1.5rem;
     color: oklch(57.7% 0.245 27.325);
@@ -13,7 +14,7 @@
 	margin-bottom: 0.5rem;
 }
 
-#blog h3 {
+#blog h2 {
     font-weight: bold;
     font-size: 1.25rem;
 }
@@ -24,10 +25,6 @@
     border: double;
     margin: 1rem 0;
     width: fit-content;
-}
-
-#blog > * > img {
-    margin: 1.5rem 0;
 }
 
 #blog ul {

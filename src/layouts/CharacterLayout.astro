@@ -1,0 +1,16 @@
+---
+// src\layouts\CharacterLayout.astro
+import '../styles/character.css';
+import Layout from './Layout.astro';
+import MajorStatsTable from '../components/characters/MajorStatsTable.jsx';
+const {frontmatter} = Astro.props;
+---
+
+<title>{frontmatter.name} | SMEAR Japan Wiki</title>
+
+<Layout>
+  <div id="main-content" class="p-4">
+    <MajorStatsTable stats={frontmatter.stats} client:load />
+    <slot />
+  </div>
+</Layout>
