@@ -69,11 +69,12 @@ const characterStatBlock = {
 ---
 
 
-<title>{frontmatter.name} | SMEAR Japan Wiki</title>
 
-<Layout>
+<Layout title={`${frontmatter.name} | SMEAR Japan`}> 
   <div id="main-content" class="p-4">
     <slot />
-    <CharacterStatsTable characterStatBlock={characterStatBlock} client:load />
+    <div class="my-4">
+      <CharacterStatsTable characterStatBlock={characterStatBlock} client:load />
+    </div>
   </div>
 </Layout>

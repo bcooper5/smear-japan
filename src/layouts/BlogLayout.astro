@@ -1,10 +1,15 @@
 ---
-import '../styles/blog.css'
-import Layout from "./Layout.astro";
-import MajorStatsTable from '../components/characters/CharacterStatsTable';
+import '../styles/blog.css';
+import Layout from './Layout.astro';
+
+// Access frontmatter explicitly
+const { frontmatter } = Astro.props;
+const title = frontmatter?.title;
+console.log('BlogLayout frontmatter:', frontmatter);
+console.log('BlogLayout title:', title);
 ---
 
-<Layout>
+<Layout title={title || 'BlogLayout Fallback'}>
     <div id="blog">
         <slot />
     </div>

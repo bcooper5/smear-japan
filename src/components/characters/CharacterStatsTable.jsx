@@ -83,7 +83,7 @@ const CharacterStatsTable = ({characterStatBlock}) => {
         { statsTableIsHidden ? 'Expand' : 'Collapse' } Character Stats
       </button>
 
-      <div className={`character-stats-table bg-gray-500 ${statsTableIsHidden ? 'max-h-0' : 'max-h-[9999px]'} transition-all duration-400 overflow-hidden md:flex`}>
+      <div className={`character-stats-table bg-gray-400 ${statsTableIsHidden ? 'max-h-0' : 'max-h-[9999px]'} transition-all duration-400 overflow-hidden md:flex`}>
         {
           statsTableIsHidden ? '' : Object.keys(statsMap).map( majorStatName => {
             const majorStatValue = characterStatBlock.majorStats[`${majorStatName}`];
@@ -99,15 +99,16 @@ const CharacterStatsTable = ({characterStatBlock}) => {
                 {
                   statsMap[majorStatName].map( minorStatName => {
                     const minorStatValue = characterStatBlock.minorStats[`${minorStatName}`];
+                    const minorStatTotal = majorStatValue + minorStatValue;
                     console.log(minorStatValue);
 
                     return ( // MINOR STAT
                     <div key={minorStatName} className={`minor-stat-row ${minorStatName}-row p-3 border-b flex items-center justify-left`}>
                       <div className='minor-stat-label w-[150px]'>{(initialCaps(minorStatName))}</div>
-                      <div className={`minor-stat-value mx-4 ${minorStatValue > 0 ? 'font-bold' : ''}`}>{minorStatValue}</div>
+                      <div className={`minor-stat-value mx-4 ${minorStatValue > 0 ? 'font-bold text-white drop-shadow' : ''}`}>{minorStatValue}</div>
                       <button
-                        className={`minor-stat-total ${(minorStatValue + majorStatValue) > majorStatValue ? 'bg-emerald-500' : 'text-white'} font-bold bg-black size-8 flex items-center justify-center`}>
-                          {minorStatValue + majorStatValue}
+                        className={`minor-stat-total ${minorStatTotal > majorStatValue ? 'bg-green-500' : minorStatTotal < majorStatValue ? 'bg-red-500' :'text-white'} font-bold bg-black size-8 flex items-center justify-center drop-shadow`}>
+                          {minorStatTotal}
                       </button>
                     </div>
                   )})
