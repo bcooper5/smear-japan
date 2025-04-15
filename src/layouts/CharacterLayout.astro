@@ -2,15 +2,78 @@
 // src\layouts\CharacterLayout.astro
 import '../styles/character.css';
 import Layout from './Layout.astro';
-import MajorStatsTable from '../components/characters/MajorStatsTable.jsx';
+import CharacterStatsTable from '../components/characters/CharacterStatsTable.jsx';
 const {frontmatter} = Astro.props;
+const characterStatBlock = {
+  "majorStats": {
+    "might": frontmatter['might'],
+    "reflex": frontmatter['reflex'],
+    "endurance": frontmatter['endurance'],
+    "sense": frontmatter['sense'],
+    "arcane": frontmatter['arcane'] 
+  },
+
+  "minorStats": {
+    "long-blade": frontmatter['long-blade'],
+    "block": frontmatter['block'],
+    "polearm": frontmatter['polearm'],
+    "throw-large-object": frontmatter['throw-large-object'],
+    "blunt": frontmatter['blunt'],
+    "climbing": frontmatter['climbing'],
+    "boxing": frontmatter['boxing'],
+    "upper-body": frontmatter['upper-body'],
+    "lower-body": frontmatter['lower-body'],
+    "intimidation": frontmatter['intimidation'],
+    "dodge": frontmatter['dodge'],
+    "core-muscles": frontmatter['core-muscles'],
+    "riding": frontmatter['riding'],
+    "move-quietly": frontmatter['move-quietly'],
+    "sleight-of-hand": frontmatter['sleight-of-hand'],
+    "escape-artist": frontmatter['escape-artist'],
+    "throw-small-object": frontmatter['throw-small-object'],
+    "acrobatics": frontmatter['acrobatics'],
+    "precision": frontmatter['precision'],
+    "short-blade": frontmatter['short-blade'],
+    "light-armor": frontmatter['light-armor'],
+    "heavy-armor": frontmatter['heavy-armor'],
+    "archery": frontmatter['archery'],
+    "wrestling": frontmatter['wrestling'],
+    "damage-resistance": frontmatter['damage-resistance'],
+    "immune-system": frontmatter['immune-system'],
+    "metabolism": frontmatter['metabolism'],
+    "calluses": frontmatter['calluses'],
+    "hide-from-sight": frontmatter['hide-from-sight'],
+    "vision": frontmatter['vision'],
+    "hearing": frontmatter['hearing'],
+    "investigation": frontmatter['investigation'],
+    "history": frontmatter['history'],
+    "medicine": frontmatter['medicine'],
+    "persuasion": frontmatter['persuasion'],
+    "public-speaking": frontmatter['public-speaking'],
+    "religion": frontmatter['religion'],
+    "literacy": frontmatter['literacy'],
+    "memory": frontmatter['memory'],
+    "logic": frontmatter['logic'],
+    "culture": frontmatter['culture'],
+    "divination": frontmatter['divination'],
+    "willpower": frontmatter['willpower'],
+    "security": frontmatter['security'],
+    "destruction": frontmatter['destruction'],
+    "conjuration": frontmatter['conjuration'],
+    "restoration": frontmatter['restoration'],
+    "illusion": frontmatter['illusion'],
+    "alteration": frontmatter['alteration'],
+    "mysticism": frontmatter['mysticism']
+  }
+};
 ---
+
 
 <title>{frontmatter.name} | SMEAR Japan Wiki</title>
 
 <Layout>
   <div id="main-content" class="p-4">
-    <MajorStatsTable stats={frontmatter.stats} client:load />
     <slot />
+    <CharacterStatsTable characterStatBlock={characterStatBlock} client:load />
   </div>
 </Layout>

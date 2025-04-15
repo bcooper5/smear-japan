@@ -7,3 +7,14 @@ ul {
 body {
 	background-color: #44403c;
 }
+
+/* Hyperlink colors (exception for class 'not-blue' */
+:link:not(.not-blue) {
+    color: #0000EE;
+}:link:hover:not(.not-blue) {
+    text-decoration: underline;
+}:visited:not(.not-blue) {
+    color: #551A8B;
+}:link:active:not(.not-blue), #blog :visited:active:not(.not-blue) {
+    color: #FF0000;
+}
